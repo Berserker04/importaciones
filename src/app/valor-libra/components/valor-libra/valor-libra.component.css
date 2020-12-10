@@ -1,0 +1,14 @@
+.example-form-field {
+    width: 200px;
+  }
+
+  .valor{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+  }
+
+  .valor span{
+    font-size: 45px
+  }

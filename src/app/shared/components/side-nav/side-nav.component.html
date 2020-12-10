@@ -1,0 +1,31 @@
+<mat-sidenav-container class="sidenav-container ">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar class="sedeTitle">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLinkActive="active" routerLink="/paquete"><i class="fas fa-cubes"></i>
+        <span>Paquete</span></a>
+      <a mat-list-item routerLinkActive="active" routerLink="/cliente"><i class="fas fa-user-friends"></i>
+        <span>Cliente</span> </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/empresa_transportadora"><i
+          class="fas fa-shipping-fast"></i> <span>Empresa transportadora</span></a>
+      <a mat-list-item routerLinkActive="active" routerLink="/tipo_mercancia"><i
+          class="fab fa-creative-commons-remix"></i><span>Tipo de mercancia</span> </a>
+      <a mat-list-item routerLinkActive="active" routerLink="/valor_libra"><i class="fas fa-dollar-sign"></i>
+        <span>Valor libra</span></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="header-color">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Importaciones S.A.S</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <div class="container-root">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

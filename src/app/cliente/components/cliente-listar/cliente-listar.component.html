@@ -1,0 +1,44 @@
+<h1>Clientes</h1>
+
+<form asp-action="Index" method="post">
+  <div class="form-actions no-colors">
+    <div class="form-group col-md-6">
+      <input class="form-control" type="text" name="busqueda" value=""
+        placeholder="Buscar por Nombre / Número de casillero" />
+    </div>
+    <div class="form-group">
+      <a class="btn btn-dark" asp-action="Index">Todos los clientes <i class="fas fa-list-ul"></i></a> |
+      <button type="submit" class="btn btn-primary">Buscar <i class="fab fa-searchengin"></i></button>
+    </div>
+  </div>
+</form>
+
+<p>
+  <a class="btn btn-primary" routerLink="/cliente/registrar" >Crear nuevo <i class="fas fa-plus"></i></a>
+</p>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Número de Casillero</th>
+      <th scope="col">Nombre completo</th>
+      <th scope="col">Correo</th>
+      <th scope="col">Dirección de entrega</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let cliente of clientes; index as i">
+    <tr>
+      <th scope="row">{{i+1}}</th>
+      <td>{{cliente.numeroCasillero}}</td>
+      <td>{{cliente.nombre}}</td>
+      <td>{{cliente.correo}}</td>
+      <td>{{cliente.direccion}}</td>
+      <td>
+        <a class="btn btn-warning" routerLink="/cliente/editar/{{cliente.idCliente}}" ><i class="fas fa-edit"></i></a> |
+        <a class="btn btn-info"><i class="fas fa-info"></i></a> |
+        <a class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,30 @@
+<!-- <mat-form-field class="example-form-field">
+    <mat-label>Valor por libra</mat-label>
+    <input matInput type="number" [(ngModel)]="value">
+    <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field> -->
+<h4>Actualizar valor de Libra</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form>
+            <div class="text-danger"></div>
+            <input type="hidden" />
+            <div class="form-group">
+                <label class="control-label"></label>
+                <input class="form-control" name="newValor" type="number" [(ngModel)]="newValor" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button (click)="actualizarValorLibra()" type="submit" class="btn btn-success">Actualizar <i
+                        class="fas fa-save"></i></button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="valor">
+    <h2>Valor por libra</h2>
+    <!-- <span>{{valor | currency}}</span> -->
+</div>
