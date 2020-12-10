@@ -1,0 +1,74 @@
+<h1>Crear / Editar</h1>
+
+<h4>Paquete</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form [formGroup]="form">
+            <div class="text-danger"></div>
+            <!-- <div class="form-group" hidden>
+                <label class="control-label">Código</label>
+                <input formControlName="codigo" class="form-control" />
+                <span class="text-danger"></span>
+            </div> -->
+            <div class="form-group">
+                <label class="control-label">Peso en libra *</label>
+                <input formControlName="peso" class="form-control" placeholder="Peso" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Número de casillero *</label>
+                <input formControlName="fkNumCasillero" class="form-control" placeholder="Número de casillero" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Número de guía USA *</label>
+                <input formControlName="numGuiaUSA" class="form-control" placeholder="Número de guía USA" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Número de guía Col *</label>
+                <input formControlName="numGuiaCol" class="form-control" placeholder="Número de guía Col" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Empresa transportadora *</label>
+                <select class="form-control" formControlName="fkEmpresa">
+                    <option value={{0}}>Seleccionar</option>
+                    <option *ngFor="let empresa of empresaTransportadoras" value={{empresa.id}}>{{empresa.nombre}}
+                    </option>
+                </select>
+                <span asp-validation-for="FkEmpresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Tipo de mercancia *</label>
+                <select class="form-control" formControlName="fkTipo">
+                    <option value={{0}}>Seleccionar</option>
+                    <option *ngFor="let tipo of tipoMercancias" value={{tipo.id}}>{{tipo.tipo}}</option>
+                </select>
+                <span class="text-danger"></span>
+            </div>
+            <!-- <div class="form-group" hidden>
+                <label asp-for="Valor" class="control-label"></label>
+                <input asp-for="Valor" class="form-control" />
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div> -->
+            <div class="form-group" *ngIf="id != 0">
+                <label class="control-label">Estado *</label>
+                <select class="form-control" formControlName="fkEstado">
+                    <option value={{0}}>Seleccionar</option>
+                    <option *ngFor="let estado of estadoPaquetes" value={{estado.id}}>{{estado.estado}}</option>
+                </select>
+                <span class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <a class="btn btn-dark" routerLink="/paquete">Atras <i class="fas fa-arrow-left"></i></a> |
+                <a *ngIf="id == 0" routerLink="/paquete" (click)="guardarPaquete()" class="btn btn-success">Guardar <i
+                        class="fas fa-save"></i></a>
+                <a *ngIf="id != 0" routerLink="/paquete" (click)="actualizarPaquete()"
+                    class="btn btn-success">Actualizar <i class="fas fa-save"></i></a>
+            </div>
+        </form>
+    </div>
+</div>

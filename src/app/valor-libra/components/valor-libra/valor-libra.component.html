@@ -9,22 +9,22 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form>
-            <div class="text-danger"></div>
-            <input type="hidden" />
-            <div class="form-group">
-                <label class="control-label"></label>
-                <input class="form-control" name="newValor" type="number" [(ngModel)]="newValor" />
-                <span class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <button (click)="actualizarValorLibra()" type="submit" class="btn btn-success">Actualizar <i
-                        class="fas fa-save"></i></button>
-            </div>
-        </form>
+        <!-- <form> -->
+        <div class="text-danger"></div>
+        <input type="hidden" />
+        <div class="form-group">
+            <label class="control-label"></label>
+            <input class="form-control" name="newValor" type="number" [(ngModel)]="newValor" />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button (click)="actualizarValorLibra()" type="submit" class="btn btn-success">Actualizar <i
+                    class="fas fa-save"></i></button>
+        </div>
+        <!-- </form> -->
     </div>
 </div>
 <div class="valor">
     <h2>Valor por libra</h2>
-    <!-- <span>{{valor | currency}}</span> -->
+    <span>{{valor | currency}}</span>
 </div>

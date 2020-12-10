@@ -1,0 +1,66 @@
+<h1>Detalle</h1>
+<h4>Paquete</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div class="text-danger"></div>
+        <div class="form-group">
+            <label class="control-label">Código</label>
+            <input value={{paqueteDetallle.codigo}} class="form-control" disabled />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Peso en libra</label>
+            <input value={{paqueteDetallle.peso}} class="form-control" disabled placeholder="Peso" />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Número de casillero</label>
+            <input value={{paqueteDetallle.numCasillero}} class="form-control" disabled
+                placeholder="Número de casillero" />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Nombre del cliente</label>
+            <input value={{paqueteDetallle.nombreCliente}} class="form-control" disabled
+                placeholder="Número de guía USA" />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Número de guía USA</label>
+            <input value={{paqueteDetallle.numGuiaUSA}} class="form-control" disabled
+                placeholder="Número de guía USA" />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Número de guía Col</label>
+            <input value={{paqueteDetallle.numGuiaCol}} class="form-control" disabled
+                placeholder="Número de guía Col" />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Empresa transportadora</label>
+            <input value={{paqueteDetallle.empresa}} class="form-control" disabled />
+            <span asp-validation-for="FkEmpresa" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Tipo de mercancia</label>
+            <input value={{paqueteDetallle.tipo}} class="form-control" disabled />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Valor</label>
+            <input value={{paqueteDetallle.valor|currency}} class="form-control" disabled />
+            <span class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Estado</label>
+            <input value={{paqueteDetallle.estado}} class="form-control" disabled />
+            <span class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <a class="btn btn-dark" routerLink="/paquete">Atras <i class="fas fa-arrow-left"></i></a>
+        </div>
+    </div>
+</div>

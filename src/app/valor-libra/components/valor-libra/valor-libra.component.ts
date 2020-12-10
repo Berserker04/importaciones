@@ -12,8 +12,6 @@ export class ValorLibraComponent implements OnInit {
   valor: Number = 0;
   newValor: Number = 0;
 
-  valorLibra: ValorLibra[] = [];
-
   constructor(
     private valorLibraService: ValorLibraService
   ) { }
@@ -25,7 +23,6 @@ export class ValorLibraComponent implements OnInit {
   getValorLibras() {
     this.valorLibraService.getValorLibra()
       .subscribe(valorLibra => {
-        this.valorLibra = valorLibra;
         this.valor = valorLibra[0].valor;
         this.newValor = valorLibra[0].valor;
       });

@@ -1,17 +1,17 @@
 <h1>Clientes</h1>
 
-<form asp-action="Index" method="post">
+<!-- <form >
   <div class="form-actions no-colors">
     <div class="form-group col-md-6">
       <input class="form-control" type="text" name="busqueda" value=""
         placeholder="Buscar por Nombre / Número de casillero" />
     </div>
     <div class="form-group">
-      <a class="btn btn-dark" asp-action="Index">Todos los clientes <i class="fas fa-list-ul"></i></a> |
+      <a class="btn btn-dark" >Todos los clientes <i class="fas fa-list-ul"></i></a> |
       <button type="submit" class="btn btn-primary">Buscar <i class="fab fa-searchengin"></i></button>
     </div>
   </div>
-</form>
+</form> -->
 
 <p>
   <a class="btn btn-primary" routerLink="/cliente/registrar" >Crear nuevo <i class="fas fa-plus"></i></a>
@@ -35,9 +35,9 @@
       <td>{{cliente.correo}}</td>
       <td>{{cliente.direccion}}</td>
       <td>
-        <a class="btn btn-warning" routerLink="/cliente/editar/{{cliente.idCliente}}" ><i class="fas fa-edit"></i></a> |
-        <a class="btn btn-info"><i class="fas fa-info"></i></a> |
-        <a class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+        <a class="btn btn-warning" routerLink="/cliente/editar/{{cliente.idCliente}}" ><i class="fas fa-edit"></i> editar</a> |
+        <a class="btn btn-info" routerLink="/cliente/detalle/{{cliente.idCliente}}"><i class="fas fa-info"> detalle</i></a> |
+        <a class="btn btn-danger" routerLink="/cliente" (click)="eliminarCliente(cliente.idCliente)" ><i class="fas fa-trash-alt"></i> eliminar</a>
       </td>
     </tr>
   </tbody>

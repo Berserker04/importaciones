@@ -1,0 +1,60 @@
+<h4>Detalles del cliente</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+            <div class="form-group" >
+                <label>Número de casillero</label>
+                <input disabled class="form-control" value={{cliente.numeroCasillero}} />
+            </div>
+            <div class="form-group">
+                <label>Nombre completo</label>
+                <input disabled value={{cliente.nombre}} class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Correo</label>
+                <input disabled value={{cliente.correo}} class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Dirección</label>
+                <input disabled value={{cliente.direccion}} class="form-control" />
+            </div>
+            <div class="form-group">
+                <a class="btn btn-dark" routerLink="/cliente">Atras <i class="fas fa-arrow-left"></i></a>
+                <!-- <a *ngIf="id == 0" routerLink="/cliente" (click)="guardarCliente()" class="btn btn-success">Guardar <i
+                        class="fas fa-save"></i></a>
+                <a *ngIf="id != 0" routerLink="/cliente" (click)="actualizarCliente()"
+                    class="btn btn-success">Actualizar <i class="fas fa-save"></i></a> -->
+            </div>
+    </div>
+</div>
+
+<div>
+    <h2>Paquetes de {{ cliente.nombre }}</h2>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Código</th>
+                <th scope="col">Peso en libras</th>
+                <th scope="col">Número del casillero</th>
+                <th scope="col">Estado</th>
+            </tr>
+        </thead>
+        <!-- <tr *ngIf="paquetes.length == 0">
+            <th colspan="5">No tiene paquetes registrados.</th>
+        </tr> -->
+        <tbody>
+            <tr *ngIf="paquetes.length == 0">
+                <td colspan="5" style="text-align: center;">No tiene paquetes registrados.</td>
+            </tr>
+            <tr *ngFor="let paquete of paquetes; index as i">
+                <th scope="row">{{i+1}}</th>
+                <td>{{paquete.codigo}}</td>
+                <td>{{paquete.peso}}</td>
+                <td>{{paquete.numCasillero}}</td>
+                <td>{{paquete.estado}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

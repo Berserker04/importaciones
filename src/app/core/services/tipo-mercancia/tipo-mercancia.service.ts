@@ -17,4 +17,20 @@ export class TipoMercanciaService {
   getAllTipoMercancias() {
     return this.http.get<TipoMercancia[]>(`${environment.URL_API}/TipoMercancias`);
   }
+
+  addTipoMercancia(tipoMercancias: TipoMercancia){
+    return this.http.post<TipoMercancia>(`${environment.URL_API}/TipoMercancias`, tipoMercancias);
+  }
+
+  getTipoMercanciaById(id: Number) {
+    return this.http.get<TipoMercancia>(`${environment.URL_API}/TipoMercancias/${id}`);
+  }
+
+  upDateTipoMercancia(tipoMercancias: TipoMercancia){
+    return this.http.put<TipoMercancia>(`${environment.URL_API}/TipoMercancias`, tipoMercancias);
+  }
+
+  delTipoMercancia(id: Number){
+    return this.http.delete<TipoMercancia>(`${environment.URL_API}/TipoMercancias/${id}`);
+  }
 }

@@ -17,4 +17,20 @@ export class EmpresaTransportadoraService {
   getAllEmpresaTransportadoras() {
     return this.http.get<EmpresaTransportadora[]>(`${environment.URL_API}/EmpresaTransportadoras`);
   }
+
+  addEmpresaTransportadora(empresaTransportadoras: EmpresaTransportadora){
+    return this.http.post<EmpresaTransportadora>(`${environment.URL_API}/EmpresaTransportadoras`, empresaTransportadoras);
+  }
+
+  getEmpresaTransportadoraById(id: Number) {
+    return this.http.get<EmpresaTransportadora>(`${environment.URL_API}/EmpresaTransportadoras/${id}`);
+  }
+
+  upDateEmpresaTransportadora(empresaTransportadoras: EmpresaTransportadora){
+    return this.http.put<EmpresaTransportadora>(`${environment.URL_API}/EmpresaTransportadoras`, empresaTransportadoras);
+  }
+
+  delEmpresaTransportadora(id: Number){
+    return this.http.delete<EmpresaTransportadora>(`${environment.URL_API}/EmpresaTransportadoras/${id}`);
+  }
 }
